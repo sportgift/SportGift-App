@@ -14,10 +14,12 @@ import android.view.animation.AccelerateInterpolator
 import android.view.animation.BounceInterpolator
 import android.webkit.*
 import android.widget.ImageView
+import java.util.*
+import kotlin.concurrent.schedule
 
 class MainActivity : AppCompatActivity() {
 
-    private val url = "https://www.sportgift.io"
+    private val url = "https://www.sportgift.io/app.html"
 
     private var ball: ImageView? = null
     private var image: ImageView? = null
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportActionBar!!.hide()
         setContentView(R.layout.activity_main)
+
         hlnt_iv_load.bringToFront()
         logo.bringToFront()
 
