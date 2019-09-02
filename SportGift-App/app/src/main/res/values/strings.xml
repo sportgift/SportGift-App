@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">SportGift App</string>
+    <string name="desc_logo">SportGift Logo</string>
+    <string name="desc_logo_activity">Exercises Logo</string>
 </resources>
