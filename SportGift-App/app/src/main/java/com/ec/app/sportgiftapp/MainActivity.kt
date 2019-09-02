@@ -2,6 +2,7 @@ package com.ec.app.sportgiftapp
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.graphics.Bitmap
@@ -13,6 +14,7 @@ import android.view.animation.AccelerateInterpolator
 import android.view.animation.BounceInterpolator
 import android.webkit.*
 import android.widget.ImageView
+import com.ec.app.sportgiftapp.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar!!.hide()
         setContentView(R.layout.activity_main)
         hlnt_iv_load.bringToFront()
         logo.bringToFront()
@@ -33,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         animate1()
         animate2()
 
-
+            
     }
 
     private fun animate1(){
