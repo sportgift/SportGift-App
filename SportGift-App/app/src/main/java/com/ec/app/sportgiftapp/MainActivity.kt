@@ -2,20 +2,29 @@ package com.ec.app.sportgiftapp
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.graphics.Bitmap
 import kotlinx.android.synthetic.main.activity_main.*
 import android.os.Build
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.BounceInterpolator
 import android.webkit.*
 import android.widget.ImageView
+import com.ec.app.sportgiftapp.ui.login.LoginActivity
 import java.util.*
 import kotlin.concurrent.schedule
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,53 +47,17 @@ class MainActivity : AppCompatActivity() {
         animate1()
         animate2()
 
-        // Get the web view settings instance
-        val settings = web_view.settings
+        val intent = Intent(this, LoginActivity::class.java)
+        // To pass any data to next activity
+        intent.putExtra("keyIdentifier", 1L)
+        intent.setFlags(Intent.FLAG_ACTIVITY_TASK_ON_HOME )
+        Handler().postDelayed({
+            startActivity(intent)
+        }, 3000)
 
-        // Enable java script in web view
-        settings.javaScriptEnabled = true
+        // start your next activity
+        //startActivity(intent)
 
-        // More web view settings
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            settings.safeBrowsingEnabled = true  // api 26
-        }
-        //settings.pluginState = WebSettings.PluginState.ON
-        settings.useWideViewPort = true
-        settings.loadWithOverviewMode = true
-        settings.javaScriptCanOpenWindowsAutomatically = true
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            settings.mediaPlaybackRequiresUserGesture = false
-        }
-
-        web_view.loadUrl(url);
-
-        // Set web view client
-        web_view.webViewClient = object: WebViewClient(){
-            override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
-                // Page loading started
-                // Do something
-            }
-
-            override fun onPageFinished(view: WebView, url: String) {
-                // Page loading finished
-            }
-        }
-
-        // Set web view chrome client
-        web_view.webChromeClient = object: WebChromeClient(){
-            override fun onProgressChanged(view: WebView, newProgress: Int) {
-                progress_bar.progress = newProgress
-
-                //display web page
-                if (newProgress > 99){
-                    hlnt_iv_load.visibility = View.GONE
-                    logo.visibility = View.GONE
-                    web_view.visibility = View.VISIBLE
-                    supportActionBar!!.show()
-                }
-                Log.d("Progress",newProgress.toString())
-            }
-        }
     }
 
     private fun animate1(){
