@@ -31,23 +31,10 @@ import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.net.Uri
 
 
-class MainActivity : AppCompatActivity() {
+class SignupActivity : AppCompatActivity() {
 
-      //private var video : VideoView? = null
-
-      override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-          signin.setOnClickListener {
-              val intent = Intent(this, LoginActivity::class.java)
-              startActivity(intent)
-          }
-
-       /* video = findViewById<VideoView>(R.id.videoIntro);
-
-        var path = "android.resource://" + packageName + "/" + R.raw.sport1
-        video?.setVideoURI(Uri.parse(path))
-        video?.start()*/
     }
 }
