@@ -1,6 +1,7 @@
 package com.ec.app.sportgiftapp.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -14,8 +15,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import com.ec.app.sportgiftapp.MenuMainActivity
 
 import com.ec.app.sportgiftapp.R
+import com.ec.app.sportgiftapp.SignupActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -57,6 +60,9 @@ class LoginActivity : AppCompatActivity() {
             }
             if (loginResult.success != null) {
                 updateUiWithUser(loginResult.success)
+
+                val intent = Intent(this, MenuMainActivity::class.java)
+                startActivity(intent)
             }
             setResult(Activity.RESULT_OK)
 
