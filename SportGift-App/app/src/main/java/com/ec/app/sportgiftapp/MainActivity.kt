@@ -43,6 +43,10 @@ class MainActivity : AppCompatActivity() {
               val intent = Intent(this, LoginActivity::class.java)
               startActivity(intent)
           }
+          signup.setOnClickListener {
+              val intent = Intent(this, SignupActivity::class.java)
+              startActivity(intent)
+          }
 
        /* video = findViewById<VideoView>(R.id.videoIntro);
 
