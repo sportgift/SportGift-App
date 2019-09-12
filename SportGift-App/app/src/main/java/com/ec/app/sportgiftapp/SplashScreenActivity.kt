@@ -25,6 +25,7 @@ import androidx.core.app.ComponentActivity
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 import java.lang.Exception
 
@@ -33,6 +34,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     private var logosportgift: ImageView? = null
     private var image: ImageView? = null
+    private var welcome: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +45,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         logosportgift = findViewById<ImageView>(R.id.logo)
         image = findViewById<ImageView>(R.id.image_sport)
+        welcome= findViewById<TextView>(R.id.welcome)
 
         animate1()
         animate2()
@@ -95,5 +98,16 @@ class SplashScreenActivity : AppCompatActivity() {
 
         finalAnim.play(animation)
         finalAnim.start()
+    }
+
+    /**
+     * Animate the image
+     *
+     */
+    private fun animate3(){
+
+        val fade = ObjectAnimator.ofFloat(welcome, View.ALPHA, 0.2f, 1.0f)
+        fade.setDuration(1000)
+        fade.start()
     }
 }
