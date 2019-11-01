@@ -1,25 +1,54 @@
-<div class="col-lg-12 col-md-12 col-sm-12" style="margin-top: auto; margin-bottom: auto;">
-    <div class="border-rounded container text-center col-lg-4 col-md-6 col-sm-12" style="background: rgb(39, 175, 238); height: 200px; margin-top: auto; margin-bottom: auto;">
+<div class="col-lg-12 col-md-12 col-sm-12" style="background: #6610f2;">
+    <div class="border-rounded container text-center col-lg-4 col-md-6 col-sm-12" style="background: #007bff; height: 30%;">
 
         <form>
-            <div class="login-title">
-                Iniciar sesión
+            <div class="login-title mt-3" style="font-size: 1.75rem; padding-top: 10px;">
+                <span class="" style="color: white;">Sing in</span>
             </div>
 
-            <div class="mt-2">
-                <img src="assets/icons/login/user.png" />
-                <input class="" type="text" placeholder="Usuario">
+            <div class="mt-2" style="padding-left: 5px; padding-right: 5px;">
+                <div class="input-group">
+                    <div style="background: rgb(252, 165, 5);">
+                        <i class='fas fa-user' style='font-size:24px' style="padding-left: 15px; padding-top: 10px; padding-right: 15px; padding-bottom: 10px;"></i>
+                    </div>
+                    <input type="text" class="form-control" aria-label="..." placeholder="username">
+                </div>
             </div>
-            <div class="mt-2">
-                <img src="assets/icons/login/candado.png" />
-                <input class="password" name="userPas" placeholder="Contraseña">
+
+            <div class="mt-3" style="padding-left: 5px; padding-right: 5px;">
+                <div class="input-group">
+                    <div style="background: rgb(252, 165, 5);">
+                        <i class='fas fa-lock' style='font-size:24px' style="padding-left: 15px; padding-top: 10px; padding-right: 15px; padding-bottom: 10px;"></i>
+                    </div>
+                    <input type="text" class="form-control" aria-label="..." placeholder="password">
+                </div>
             </div>
-            <button class="btn btn-danger login-button mt-2" type="button">
-                INGRESAR
+
+            <div class="form-check mt-2">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value=""> 
+                    <label for="" style="color: white;">Remember Me</label>
+                </label>
+            </div>
+
+            <button class="btn btn-danger login-button" type="button" style="color: black; background: rgb(252, 165, 5); border-color: rgb(252, 165, 5);">
+                <span style="padding-left: 15px; padding-right: 15px;">Login</span>
             </button>
 
-        </form>
+            <hr>
 
+            <div class="form-check">
+                <label class="form-check-label">
+                    <label for="" style="color: white;">Don't have an account?</label>
+                <a href="" style="color: black;"><span style="padding-left: 5px;">Sign Up</span></a>
+                </label>
+                <br>
+                <label for="">
+                    <a href="" style="color: black;">Forgot your password?</a>                            
+                </label>
+            </div>
+
+        </form>
 
     </div>
 </div>
